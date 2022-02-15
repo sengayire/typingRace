@@ -1,0 +1,14 @@
+.dashboardContainer{
+height: 700px;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+.gradeContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.dashboardKeyboard{
+    padding-top: 20px;
+}
+}

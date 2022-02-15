@@ -1,0 +1,14 @@
+.wordStackContainer{
+          display: flex;
+          width: 900px;
+          box-shadow:   var(--shadow-color);
+          background: var(--base-color);
+          padding: 10px;
+          .stackWord{
+             margin: 3px;
+             border: var(--border-color);
+             border-radius: var(--border-radius);
+             padding: 15px;
+
+          }
+}
