@@ -1,0 +1,17 @@
+.keyButtonContainer{
+        background: var(--base-color);
+        width: 80px;
+        height: 80px;
+        box-shadow:   var(--shadow-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: var(--border-radius);
+     .underlineText {
+            text-decoration: underline;
+        }
+}
