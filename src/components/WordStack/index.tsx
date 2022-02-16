@@ -3,9 +3,11 @@ import KeyButton from "../common/KeyButton";
 
 import styles from './styles.module.scss';
 
-const wordsStack = ["Prince", "sengayire", "Jean luc"];
+interface Props {
+    wordsStack: string[]
+}
 
-const WordStack = () => {
+const WordStack = ({ wordsStack }: Props) => {
     return (
         <div className={styles.wordStackContainer}>
             {wordsStack.map((a, index) => {
