@@ -1,14 +1,17 @@
 import type { NextPage } from 'next'
-import KeyButton from '../src/components/common/KeyButton';
 import Dasboard from '../src/components/dashboard';
-import Keyboard from '../src/components/Keyboard';
-import WordStack from '../src/components/WordStack';
 
+import Head from 'next/head';
 
 const Home: NextPage = () => {
 
   return (
+    <>
+      <Head>
+        <script src="https://code.responsivevoice.org/responsivevoice.js?key=atziOM7d" ></script>
+      </Head>
     <Dasboard />
+    </>
   );
 };
 
