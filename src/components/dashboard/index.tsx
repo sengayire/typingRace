@@ -4,6 +4,9 @@ import Keyboard from "../Keyboard";
 import WordStack from "../WordStack";
 import styles from './styles.module.scss';
 import { useDebounce } from 'use-debounce';
+import * as request from '../../queryHooks/interfaces/useRequest';
+import { GET_WORDS } from "../../queryHooks/constants/storeKeys";
+
 
 
 
@@ -12,7 +15,8 @@ const Dasboard = () => {
     const [character, setCharacter] = useState<string>('')
     const [word, setword] = useState<string[]>([])
     const [value] = useDebounce(word.join(''), 1000);
-    const wordsStack = ["prince", "sengayire", "Jean luc"];
+
+    const { data: wordsStack } = request.useGetRequest('/words', GET_WORDS);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -27,19 +31,14 @@ const Dasboard = () => {
 
 
     useEffect(() => {
-
         if (typeof window !== 'undefined' && value) {
-            console.log('wordsStack[0] === value', wordsStack[0] === value)
-            if (wordsStack[0] === value) {
-                delete wordsStack[0]
-            }
             window?.responsiveVoice?.speak(value)
             setword([])
         }
 
 
     }, [value])
-    console.log("word cooore", wordsStack)
+
     return (<div className={styles.dashboardContainer}>
         <div className={styles.gradeContainer}>
             <GradeLevel />

@@ -4,15 +4,15 @@ import KeyButton from "../common/KeyButton";
 import styles from './styles.module.scss';
 
 interface Props {
-    wordsStack: string[]
+    wordsStack?: Record<{ [key: string]: string }, unknown>
 }
 
 const WordStack = ({ wordsStack }: Props) => {
     return (
         <div className={styles.wordStackContainer}>
-            {wordsStack.map((a, index) => {
+            {wordsStack?.data.slice(0, 4).map((a: any) => {
                 return (
-                    <div className={styles.stackWord}><span>{a}</span></div>
+                    <div key={a._id} className={styles.stackWord}><span>{a.word}</span></div>
                 );
             })}
         </div>
